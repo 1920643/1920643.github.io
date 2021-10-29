@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+
+    "data": {
+       "url": "https://rest.coinapi.io/v1/ohlcv/BTC/GBP/history?period_id=1MTH&time_start=2016-01-01T00:00:00&apikey=980BCDD1-AF46-4585-BA09-D97F8098FC6C"
+       },
+
+
+    "title": {
+        "text": "Long run price of Bitcoin",
+        "subtitle": "Daily price of BTC in GBP. Source: CoinAPI",
+        "subtitleFontStyle":"italic",
+        "subtitleFontSize":10,
+        "anchor": "start",
+        "color": "black"},
+
+    "width":300,
+    "height":300,
+
+    "mark":{
+        "type": "line",
+        "color":"orange",
+        "strokeWidth":2,
+        "opacity":1},
+ 
+
+    "encoding": {
+      "x": {
+          "field": "time_period_end",
+          "type": "temporal",
+          "title":null},
+      "y": {
+          "field": "price_close",
+          "type": "quantitative",
+          "title":null}
+    }
+}
