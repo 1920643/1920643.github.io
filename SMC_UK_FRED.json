@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  
+    "title": {
+      "text": "Stock Market Capitalization to GDP for United Kingdom",
+      "subtitle": "Total value of all listed shares in a stock market as a % of GDP. Data source: FRED",
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 10,
+      "anchor": "start",
+      "color": "black"
+    },
+    "data": {
+      "url": "https://raw.githubusercontent.com/1920643/1920643.github.io/main/data_FRED_DDDM01GBA156NWDB.json",
+      "format": {
+            "type": "json", 
+            "property": "observations"}
+      },
+  
+    "height": 300,
+    "width": 300,
+    "mark": {"type": "area", "point": false, "color": "orange"},
+    "encoding": {
+      "x": {
+        "field": "date",
+        "type": "temporal",
+        "scale": {"domain":["1996-01-01", "2012-01-01"]},
+        "title": "Year",
+        "axis": {"grid": false}
+      },
+      "y": {
+        "field": "value",
+        "type": "quantitative",
+        "title": "",
+        "axis": {"grid": false}
+      }
+    }
+  }
