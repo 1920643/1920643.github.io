@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "SAS litter",
+    "title": {
+  
+      "text": "All time Premier League Top Assisters",
+  
+      "subtitle": "Source: Premier League.",
+  
+      "subtitleFontStyle":"italic",
+  
+      "subtitleFontSize":10,
+  
+      "anchor": "start",
+  
+      "color": "black"
+   },
+  
+    "data": {"url": "https://raw.githubusercontent.com/1920643/1920643.github.io/main/my_topassistersPL_data.csv"},
+    "mark":{
+  
+   
+  
+        "type": "bar",
+  
+        "color": "#FFA500",
+  
+        "strokeWidth":10,
+  
+        "opacity":1
+  
+   
+  
+      },
+    "height": 300,
+    "width": 380,
+  
+    "encoding": {
+      "y": {"field": "player", "type": "nominal", "sort":[], "title": null},
+  
+  
+  
+  
+      "x": {"field": "stat", "type": "quantitative", "sort":["ascending"], "title": "Assists"}
+   
+  
+      }
+  
+  
+  }
