@@ -1,7 +1,0 @@
-﻿location,location_code,geographic_level,time_period,characteristic_gender,school_type,astar_grade_achieved,a_grade_achieved,b_grade_achieved,c_grade_achieved,d_grade_achieved,e_grade_achieved,u_grade_achieved,perc_astar_grade_achieved,perc_astar_a_grade_achieved,perc_astar_b_grade_achieved,perc_astar_c_grade_achieved,perc_astar_d_grade_achieved,perc_astar_e_grade_achieved
-England,E92000001,country,201819,Female,All schools,16673,27772,33215,22250,9137,2752,847,14.8,39.453,68.937,88.688,96.799,99.242
-England,E92000001,country,201819,Male,All schools,13720,21375,24914,20073,10279,3680,1377,14.378,36.779,62.889,83.925,94.697,98.554
-England,E92000001,country,201920,Female,All schools,28254,33696,29395,16477,4505,1023,115,24.897,54.59,80.492,95.012,98.981,99.883
-England,E92000001,country,201920,Male,All schools,21025,24492,24092,17102,5909,1603,177,22.27,48.213,73.731,91.846,98.105,99.803
-England,E92000001,country,202021,Female,All schools,38274,33891,25768,13176,3815,1192,177,32.911,62.054,84.212,95.541,98.822,99.847
-England,E92000001,country,202021,Male,All schools,27828,25753,22383,14784,5460,1852,267,28.301,54.491,77.254,92.289,97.842,99.725
