@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<!-- Jack Hobbs, Data Science 2021 -->
+
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+<head>
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="button.css">
+  <link rel="stylesheet" href="SportsButton.css">
+  <link rel="stylesheet" href="CovidButton.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+  </style>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  </style>
+
+
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+</head>
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+
+
+<!-- ///////////////////  START BODY //////////////////////////////////// -->
+
+<body>
+    
+  <h1>Data <span style="color:rgb(255, 165, 0)">Science</span></h1>
+  <h4>by Jack Hobbs</h4>
+
+  <div class="wrap">
+    <p align="center">
+      <a class="dashboardButton" href="project"> Project</a>
+      <a class="dashboardButton" href="sports"> Sports</a>
+      <a class="dashboardButton" href="Covid"> Covid-19</a>  
+    </p> 
+  </div>
+
+  <h2>Portfolio</h2>
+
+  <p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+    This section contains a variety of data visualisations
+  </p>
+
+<h3>Rapid Charts</h3>
+
+<!--Chart 2; week 2 -->
+<div class="chart" id="chart2">
+    <script>
+      var myChart2 = "chart2_ukProductivity.json";
+      vegaEmbed('#chart2', myChart2);
+    </script>
+</div>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  This chart looks at productivity levels in the UK over time
+</p>
+
+
+<!--Chart 3; week 2 -->
+<div class="chart" id="chart3">
+    <script>
+      var myChart3 = "ScotlandDeathsDrugs.json";
+      vegaEmbed('#chart3', myChart3);
+    </script>
+</div>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  This chart takes a look at annual Drug related deaths in Scotland
+</p>
+
+<h3>Crypto Charts</h3>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  The following charts display live data from CoinAPI on the daily prices of Ether and Bitcoin.
+</p>
+<!--Crypto charts from COINAPI; week 5 task -->
+<div class="chart" id="chartETH">
+    <script>
+      var myChartETH = "longRunETH.json";
+      vegaEmbed('#chartETH', myChartETH);
+    </script>
+</div>
+
+<p></p>
+
+<div class="chart" id="chartBTC">
+    <script>
+      var myChartBTC = "longRunBTC.json";
+      vegaEmbed('#chartBTC', myChartBTC);
+    </script>
+</div>
+
+<h3>FRED Charts</h3>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  The data for the following charts was taken from FRED using a mini-dashboard that I have built in Google collaboratory. The dashboard uses a for loop to download multiple files at once from different API URLs. 
+</p>
+<!--FRED charts from mini-dashboard; week 6 task -->
+<div class="chart" id="chartUKUNEM">
+    <script>
+      var myChartUKUNEM = "UK_UNEM_FRED.json";
+      vegaEmbed('#chartUKUNEM', myChartUKUNEM);
+    </script>
+</div>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  This chart takes a look at the UK Unemployment rate over time. It is interesting to note that there was near to zero unemployment around the time of both World War 1 and World War 2.
+</p>
+
+<div class="chart" id="chartUKHW">
+    <script>
+      var myChartUKHW = "UK_AWHW_FRED.json";
+      vegaEmbed('#chartUKHW', myChartUKHW);
+    </script>
+</div>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  This chart takes a look at the average weekly hours worked in the UK over time. There is a clear decrease in the amount of hours worked in the 19th century which could be attributed to the innovations of the industrial revolution leading to higher productivity.
+</p>
+
+<div class="chart" id="chartTFP">
+    <script>
+      var myChartTFP = "TFP_UK_FRED.json";
+      vegaEmbed('#chartTFP', myChartTFP);
+    </script>
+</div>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  This chart takes a look at UK total factor productivity, which is defined as the residual growth which happens beyond the growth of an economy's factors of production (e.g. Labour and Capital).
+</p>
+
+<div class="chart" id="chartSMC">
+    <script>
+      var myChartSMC = "SMC_UK_FRED.json";
+      vegaEmbed('#chartSMC', myChartSMC);
+    </script>
+</div>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  This chart shows the total value of all listed shares in the UK stock market as a percentage of GDP over time.
+</p>
+
+<!--Chart from festival; week 8 task -->
+<div class="chart" id="chartALevel">
+    <script>
+      var myChartAlevel = "GenderGapEducation.json";
+      vegaEmbed('#chartALevel', myChartAlevel);
+    </script>
+</div>
+
+<p style="border:2px; border-style:solid; border-color:#228B22; padding: 1em;">
+  During the Economics Observatory's conference, one of the panelists claimed that one effect of the pandemic was a widening in the educational attainment gap between males and Females. The graph above supports this argument by showing that the percentage of A*'s achieved has increased for girls much more significantly than for boys.
+</p>
+
+</body>
+<!-- ///////////////////  END BODY //////////////////////////////////// -->
+
+</html>
