@@ -17,7 +17,7 @@
       },
   
     "height": 300,
-    "width": 445,
+    "width": 440,
     "mark": {"type": "area", "point": false, "color": "orange"},
     "encoding": {
       "x": {
