@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<!-- COVID-19 Page -->
+
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+<head>
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="button.css">
+  <link rel="stylesheet" href="SportsButton.css">
+  <link rel="stylesheet" href="CovidButton.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+  </style>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  </style>
+
+
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+</head>
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+
+
+<!-- ///////////////////  START BODY //////////////////////////////////// -->
+
+<body>
+    
+  <h1>Data <span style="color:rgb(255, 165, 0)">Science</span></h1>
+  <h4></h4>
+
+  <div class="wrap">
+    <p align="center">
+      <a class="dashboardButton" href="index"> Home</a>
+      <a class="dashboardButton" href="project"> Project</a>
+      <a class="dashboardButton" href="sports"> Sports</a>  
+    </p> 
+  </div>
+
+  <h2>COVID-19 Data</h2>
+
+  <p align:"center">
+    This page contains COVID-19 data visualisations from a variety of sources  
+  </p>
+
+  <h3></h3>
+
+<!--COVID-19 chart; Week 1 --> 
+  <div class="chart" id="chart1">
+    <script>
+      var myChart1 = "chart1_covidUKRegions.json";
+      vegaEmbed('#chart1', myChart1);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  My first chart tracks Covid cases by region in the UK
+</p>
+
+<!--Chart 4; Week 3-->
+<div class="chart" id="chart4">
+    <script>
+      var myChart4 = "CovidHomeVSUni.json";
+      vegaEmbed('#chart4', myChart4);
+  </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart tracks live Covid cases in Bristol and Ealing. It uses a UK government API to automatically update the data.
+</p>
+
+<!--Chart 5; Week 3 -->
+<div class="chart" id="chart5">
+    <script>
+      var myChart5 = "CovidCasesSurroundLDN.json";
+      vegaEmbed('#chart5', myChart5);
+</script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+This chart shows Covid cases in the areas surrounding London. It uses the same government data as the previous chart but uses a raw file instead. Therefore, it does not auto update. 
+</p> 
+
+
+</body>
+<!-- ///////////////////  END BODY //////////////////////////////////// -->
+
+</html>
