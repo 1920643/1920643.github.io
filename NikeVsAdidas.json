@@ -1,0 +1,94 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/1920643/1920643.github.io/main/stocks.csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "title": {
+        "text": "Regressing the Share price of Nike on Adidas ",
+        "subtitle": "From 2016 to 2021. Source: Yahoo Finance",
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 10,
+        "anchor": "start",
+        "color": "black"
+    },
+    "width": 350,
+    "height": 300,
+    "mark": {
+        "type": "point",
+        "color": "black",
+        "strokeWidth": 2,
+        "opacity": 1
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "point",
+                "filled": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "NKE",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "ADDYY",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "line",
+                "color": "firebrick"
+            },
+            "transform": [
+                {
+                    "regression": "NKE",
+                    "on": "ADDYY"
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "NKE",
+                    "type": "quantitative",
+                    "title":"Nike"
+        
+                },
+                "y": {
+                    "field": "ADDYY",
+                    "type": "quantitative",
+                    "title":"Adidas"
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "regression": "NKE",
+                    "on": "ADDYY",
+                    "params": true
+                },
+                {
+                    "calculate": "'R²: '+format(datum.rSquared, '.2f')",
+                    "as": "R2"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "color": "black",
+                "x": "width",
+                "align": "center",
+                "y": -10
+            },
+            "encoding": {
+                "text": {
+                    "type": "nominal",
+                    "field": "R2"
+                }
+            }
+        }
+    ]
+}
