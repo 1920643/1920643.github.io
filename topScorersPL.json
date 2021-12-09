@@ -33,7 +33,7 @@
   
       },
     "height": 300,
-    "width": 380,
+    "width": 360,
   
     "encoding": {
       "y": {"field": "player", "type": "nominal", "sort":[], "title": null},
