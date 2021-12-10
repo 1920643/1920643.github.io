@@ -67,6 +67,7 @@
       "color": {
         "field": "Geography",
         "type": "nominal",
+        "legend": null,
         "scale": {"scheme": "inferno"}
       }
     }
