@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<!-- Jack Hobbs, Data Science 2021 -->
+
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+<head>
+
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="button.css">
+  <link rel="stylesheet" href="SportsButton.css">
+  <link rel="stylesheet" href="CovidButton.css">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+  </style>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+  </style>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  </style>
+
+
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+
+</head>
+
+<!-- ///////////////////  HEAD //////////////////////////////////// -->
+
+
+
+<!-- ///////////////////  START BODY //////////////////////////////////// -->
+
+<body>
+    
+  <h1>Data <span style="color:rgb(255, 165, 0)">Science</span></h1>
+  <h4>by Jack Hobbs</h4>
+
+  <div class="wrap">
+    <p align="center">
+      <a class="dashboardButton" href="project"> Project</a>
+      <a class="dashboardButton" href="sports"> Sports</a>
+      <a class="dashboardButton" href="Covid"> Covid-19</a>  
+    </p> 
+  </div>
+
+  <p align="justify">
+    This website has been built as part of my Data Science module at the Univeristy of Bristol. Over a period of ten weeks I have completed weekly tasks using different data science techniques and have displayed them on my website. By the end of the ten weeks I aim to tell an interesting data story using a variety of data visualisations and commentary. This story can be found on my project page. This page contains the majority of my weekly tasks, however, I have decided to separate the tasks related to Covid-19 and Sports as they are easily categorised 
+  </p>
+
+  <h2>Portfolio</h2>
+
+  <p></p>
+
+<h2>Week 2: Embedding charts onto a website</h2>
+
+<!--Chart 2; week 2 -->
+<div class="chart" id="chart2">
+    <script>
+      var myChart2 = "chart2_ukProductivity.json";
+      vegaEmbed('#chart2', myChart2);
+    </script>
+</div>
+
+<p></p>
+
+<!--Chart 3; week 2 -->
+<div class="chart" id="chart3">
+    <script>
+      var myChart3 = "ScotlandDeathsDrugs.json";
+      vegaEmbed('#chart3', myChart3);
+    </script>
+</div>
+
+<p></p>
+
+<!--COVID-19 chart; Week 2 --> 
+<div class="chart" id="chart1">
+    <script>
+      var myChart1 = "chart1_covidUKRegions.json";
+      vegaEmbed('#chart1', myChart1);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  These charts have been taken from Rapid Charts and show productivity levels in the UK over time, drug related deaths by type of drug in Scotland over time and Covid cases by UK regions
+</p>
+
+<h2>Week 3: API vs Hosted on Github</h2>
+<!--Chart 4; Week 3-->
+<div class="chart" id="chart4">
+    <script>
+      var myChart4 = "CovidHomeVSUni.json";
+      vegaEmbed('#chart4', myChart4);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart tracks live Covid cases in Bristol and Ealing. It uses a UK government API to automatically update the data.
+</p>
+
+<!--Chart 5; Week 3 -->
+<div class="chart" id="chart5">
+    <script>
+      var myChart5 = "covidCasesSurroundingLDN.json";
+      vegaEmbed('#chart5', myChart5);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart shows Covid cases in the areas surrounding London. It uses the same government data as the previous chart but uses a raw file which is hosted on Github instead. Therefore, it does not auto update. 
+</p> 
+
+<h2>Week 4: Editing data</h2>
+
+<!--Sports spending chart; week 4 -->
+<div class="chart" id="chartS">
+    <script>
+      var myChartS = "SpendingOnSports.json";
+      vegaEmbed('#chartS', myChartS);
+    </script>
+</div>
+
+  <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+    This chart takes a look at annual household spending on sporting services and recreation from 2005 to 2019 in the UK. There is a clear increase in spending from 2012 onwards which could be attributed to the home Olympics. The data was taken from the ONS and manually entered into json objects instead of imported through a URL.
+  </p>
+
+<!--Sports participation by country chart; week 4 -->
+<div class="chart" id="chartS2">
+    <script>
+      var myChartS2 = "physicalActivityByCountry.json";
+      vegaEmbed('#chartS2', myChartS2);
+    </script>
+</div>
+
+  <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+    This chart shows the percentage of people that participate in aerobic and muscle strengthening physical activity accross EU countires in 2014. The data was taken from Eurostat and hosted via Github in a csv file.
+  </p>
+
+<!--Sports participation by education chart; week 4 -->
+<div class="chart" id="chartS3">
+    <script>
+      var myChartS3 = "physicalAcvtivityByEd.json";
+      vegaEmbed('#chartS3', myChartS3);
+    </script>
+</div>
+
+  <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+    This chart shows the average participation in aerobic and muscle strengthening physical activity in the EU by level of eduational attainment. It uses the same Eurostat data as the chart above. However, I have constructed an average participation level across all EU countries for each level of educational attainment. 
+  </p>
+
+
+<h2>Week 5: Finding and signing up to an API </h2>
+
+<h3>Crypto Charts </h3>
+
+<p align:"center">
+  The following charts display live data from CoinAPI on the daily prices of Ether and Bitcoin.
+</p>
+<!--Crypto charts from COINAPI; week 5 task -->
+<div class="chart" id="chartETH">
+    <script>
+      var myChartETH = "longRunETH.json";
+      vegaEmbed('#chartETH', myChartETH);
+    </script>
+</div>
+
+<p></p>
+
+<div class="chart" id="chartBTC">
+    <script>
+      var myChartBTC = "longRunBTC.json";
+      vegaEmbed('#chartBTC', myChartBTC);
+    </script>
+</div>
+
+<h2>Week 6: Using for loops to download data</h2>
+
+<h3>FRED Charts</h3>
+
+<p align:"center">
+  The data for the following charts was taken from FRED using a mini-dashboard that I have built in Google collaboratory. The dashboard uses a for loop to download multiple files at once from different API URLs. 
+</p>
+<!--FRED charts from mini-dashboard; week 6 task -->
+<div class="chart" id="chartUKUNEM">
+    <script>
+      var myChartUKUNEM = "UK_UNEM_FRED.json";
+      vegaEmbed('#chartUKUNEM', myChartUKUNEM);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart takes a look at the UK Unemployment rate over time. It is interesting to note that there was near to zero unemployment around the time of both World War 1 and World War 2.
+</p>
+
+<div class="chart" id="chartUKHW">
+    <script>
+      var myChartUKHW = "UK_AWHW_FRED.json";
+      vegaEmbed('#chartUKHW', myChartUKHW);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart takes a look at the average weekly hours worked in the UK over time. There is a clear decrease in the amount of hours worked in the 19th century which could be attributed to the innovations of the industrial revolution leading to higher productivity.
+</p>
+
+<div class="chart" id="chartTFP">
+    <script>
+      var myChartTFP = "TFP_UK_FRED.json";
+      vegaEmbed('#chartTFP', myChartTFP);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart takes a look at UK total factor productivity, which is defined as the residual growth which happens beyond the growth of an economy's factors of production (e.g. Labour and Capital).
+</p>
+
+<div class="chart" id="chartSMC">
+    <script>
+      var myChartSMC = "SMC_UK_FRED.json";
+      vegaEmbed('#chartSMC', myChartSMC);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart shows the total value of all listed shares in the UK stock market as a percentage of GDP over time.
+</p>
+
+<h2>Week 7: Scraping</h2>
+<h3>Premier League Data</h3>
+
+  <!--PL top scorers chart scraped from Premier league website; week 7 -->
+<div class="chart" id="chartPL1">
+    <script>
+      var myChartPL1 = "topScorersPL.json";
+      vegaEmbed('#chartPL1', myChartPL1);
+    </script>
+</div>
+
+  <p></p>
+
+<!--PL top assisters chart scraped from Premier league website; week 7 -->
+<div class="chart" id="chartPL2">
+    <script>
+      var myChartPL2 = "topAssistersPL.json";
+      vegaEmbed('#chartPL2', myChartPL2);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  The following charts show data taken from the Premier League website using a scraper I have built in Google collab . 
+</p>
+
+<h2>Week 8: A critical commentary</h2>
+
+<h3>The Economics Observatory's Festival of economics</h3>
+<!--Chart from festival; week 8 task -->
+<div class="chart" id="chartALevel">
+    <script>
+      var myChartAlevel = "GenderGapEducation.json";
+      vegaEmbed('#chartALevel', myChartAlevel);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  During the Economics Observatory's conference, one of the panelists claimed that one effect of the pandemic was a widening in the educational attainment gap between males and Females. The graph above supports this argument by showing that the percentage of A*'s achieved has increased for girls much more significantly than for boys.
+</p>
+
+<h2>Week 9: Advanced data analytics</h2>
+
+<div class="chart" id="NikeVsAdidas">
+    <script>
+      var NikeVsAdidas = "NikeVsAdidas.json";
+      vegaEmbed('#NikeVsAdidas', NikeVsAdidas);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart displays a regression of Nike share prices on Adidas Share prices from 2016 to 2021. As you can see the R-squared value is 0.77 which would suggest this regression is relatively strong, with most of the variation in Nike share prices explaining the variation in Adidas share prices. The data was taken from the Yahoo Finance python library using Google Collaboratory.
+</p>
+
+<h2>Week 10: Interactive charts</h2>
+
+<div class="chart" id="RentPricesChart">
+    <script>
+      var MyRentPricesChart = "rentPricesIndex.json";
+      vegaEmbed('#RentPricesChart', MyRentPricesChart);
+    </script>
+</div>
+
+<p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+  This chart shows the index for private housing rent prices by region in the UK, using an interactive drop down bar to show each region separately.
+</p>
+
+</body>
+<!-- ///////////////////  END BODY //////////////////////////////////// -->
+
+</html>
