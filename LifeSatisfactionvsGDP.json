@@ -1,0 +1,111 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/1920643/1920643.github.io/main/satisfactionVsGDPIndex(cleaned).csv",
+        "format": {
+            "type": "csv"
+        }
+    },
+    "title": {
+        "text": "Life Satisfaction vs GDP - UK regions",
+        "fontSize": 16,
+    "subtitle":["Average Life Satisfaction rating vs GDP index (2016=100). Source: ONS"],
+        "subtitleFontStyle": "italic",
+        "subtitleFontSize": 12,
+        "anchor": "start",
+        "color": "green"
+    },
+    "width": "container",
+    "height": 300,
+    "mark": {
+        "type": "point",
+        "color": "black",
+        "strokeWidth": 2,
+        "opacity": 1
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "point",
+                "filled": true,
+                "size": 80
+            },
+            "encoding": {
+                "x": {
+                    "field": "GDPIndex",
+                    "type": "quantitative",
+                    "scale": {"domain": [85, 110]}
+                },
+                "y": {
+                    "field": "lifeSatisfaction",
+                    "type": "quantitative",
+                    "scale": {"domain": [7, 8]}
+                }
+            }
+        },
+        {
+            "mark": {
+                "type": "line",
+                "color": "orangered"
+            },
+            "transform": [
+                {
+                    "regression": "GDPIndex",
+                    "on": "lifeSatisfaction"
+                }
+            ],
+            "encoding": {
+                "x": {
+                    "field": "GDPIndex",
+                    "type": "quantitative",
+                    "title":"GDP",
+                    "scale": {"domain": [85, 110]},
+                    "axis": {
+                        "titleColor": "black",
+                        "titleFontSize": 12,
+                        "grid": false,
+                        "labelFontSize":10}
+        
+                },
+                "y": {
+                    "field": "lifeSatisfaction",
+                    "type": "quantitative",
+                    "title":"Life Satisfaction",
+                    "scale": {"domain": [7,8]},
+                    "axis": {
+                        "titleColor": "black",
+                        "titleFontSize": 12,
+                        "grid": false,
+                        "labelFontSize":10}                    
+                }
+            }
+        },
+        {
+            "transform": [
+                {
+                    "regression": "GDPIndex",
+                    "on": "lifeSatisfaction",
+                    "params": true
+                },
+                {
+                    "calculate": "'R²: '+format(datum.rSquared, '.2f')",
+                    "as": "R2"
+                }
+            ],
+            "mark": {
+                "type": "text",
+                "color": "green",
+                "fontWeight": "bold",
+                "x": "width",
+                "align": "center",
+                "y": -10
+            },
+            "encoding": {
+                "text": {
+                    "type": "nominal",
+                    "field": "R2"
+                }
+            }
+        }
+    ]
+}

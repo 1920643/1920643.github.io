@@ -1,0 +1,110 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    
+    "title": {
+      "text": "GNI per Capita on Happiness",
+      "subtitle": [
+        "GNI per Capita, PPP (current international $).Year = 2020",
+        "Source: World Bank, World Happiness Report"
+      ],
+      "subtitleFontStyle": "italic",
+      "subtitleFontSize": 12,
+      "anchor": "start",
+      "fontSize": 16,
+      "color": "green"
+    },
+    
+    "height": 300,
+    "width": "container",
+    
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/1920643/1920643.github.io/main/happinessGNI.csv"
+        },
+        
+        "mark": {"type": "point", "size": 80, "filled": true},
+        
+        "encoding": {
+          "x": {
+            "field": "GNIperCapita",
+            "type": "quantitative",
+            "title": "GNI per capita, PPP",
+            "axis": {
+              "titleColor": "black",
+              "titleFontSize": 12, 
+              "grid":false,
+              "labelFontSize":10
+            }
+          },
+          "y": {
+            "field": "LadderScore",
+            "type": "quantitative",
+            "title": "Happiness",
+            "axis": {
+              "titleColor": "black",
+              "titleFontSize": 12,
+              "grid": false,
+              "labelFontSize":10
+            }
+          },
+          "tooltip": [
+            {"field": "Country name", "type": "nominal", "title": "Country"},
+            {
+            "field": "GNIperCapita", 
+            "type": "nominal", 
+            "title": "GNI per Capita",
+            "format": ".0f"
+          
+            },
+            {
+              "field": "LadderScore",
+              "type": "quantitative",
+              "title": "Happiness",
+              "format": ".2f"
+            }
+          ]
+            }
+          },
+        
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/1920643/1920643.github.io/main/happinessGNIline.csv"
+        },
+        
+        "mark": {"type": "line", "color": "orangered"},
+        
+        "encoding": {
+          "x": {"field": "GNIfitted", "type": "quantitative"},
+          "y": {"field": "LSfitted", "type": "quantitative"}
+        }
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/1920643/1920643.github.io/main/happinessGNI.csv"
+        },
+        
+        "transform": [
+          {
+            "regression": "GNIperCapita",
+            "on": "LadderScore",
+            "method": "quad",
+            "params": true
+          },
+          {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+        ],
+        
+        "mark": {
+          "type": "text",
+          "color": "green",
+          "fontSize": 12,
+          "x": "width",
+          "align": "right",
+          "fontWeight": "bold",
+          "y": -10
+        },
+        
+        "encoding": {"text": {"type": "nominal", "field": "R2"}}
+      }
+    ]
+  }
