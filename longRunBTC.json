@@ -14,7 +14,7 @@
         "anchor": "start",
         "color": "black"},
 
-    "width":430,
+    "width":"container",
     "height":300,
 
     "mark":{
