@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+
+  <link rel="stylesheet" href="portfolio.css">
+  <link rel="stylesheet" href="button.css">
+  
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Scheherazade+New&display=swap');
+  </style>
+  
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');          
+  </style>
+      
+  <style>
+     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  </style>
+      
+      
+<!--The next three lines allow the Vega embed-->
+<script src="https://cdn.jsdelivr.net/npm/vega@5.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.17.0"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.12.2"></script>
+      
+</head>
+      
+
+<body>
+    
+  <h1>Data <span style="color:rgb(255, 165, 0)">Science</span></h1>
+  <h4>by Jack Hobbs</h4>
+
+  <div class="wrap">
+    <p align="center">
+      <a class="dashboardButton" href="index"> Home</a>
+      <a class="dashboardButton" href="portfolio"> Portfolio</a> 
+    </p> 
+  </div>
+  
+  <h2>Can money really buy happiness?</h2>
+
+  <h2>Aims</h2>
+  
+  <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+    The main aim of this project is to understand the relationship between money and happiness and observe whether areas with greater wealth experience higher levels of happiness. Aside from trying to answer one of life's most important questions, this project is motivated by the recent fall in happiness following the Covid-19 pandemic. The visualisations used are a combination of scatter plots, bar and line charts and they aim to challenge the conventional view that economies should always target greater levels of GDP.  
+  </p>
+
+  <h2>Data</h2>
+  
+  <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+    The data used for this project comes from a variety of sources and was cleaned and merged using both python in Google Colab and Excel. The UK regional data on happiness, life satisfaction and GDP was downloaded directly from the ONS. The international data on happiness was downloaded directly from the World Happiness report 2020. Finally, the data on Gross National Income was downloaded using the World Bank API.
+  </p>
+
+  <h2>Happiness and GDP in UK regions</h2>
+
+  <p>This visualisation plots the happiness of UK regions from 2012 to 2021 using data from the new ONS Beta website. The time format of the data was originally across two years e.g. 2012/2013, therefore, I had to transform the time format to year ending in order to display it in Vega e.g. 2012/2013 = 2013. There is a general increase in happiness up until 2019 where it falls back to 2013 levels, which can be attributed to the Covid-19 pandemic.</p>
+
+ 
+  <div class="chart" id="chartP1">
+      <script>
+        var myChartP1 = "happinessByRegionUK.json";
+        vegaEmbed('#chartP1', myChartP1);
+      </script>
+  </div>
+
+  <p>This visualisation plots UK GDP over time using the ONS API, which means that the data is live updating. The GDP is in millions of pounds and is adjusted for changes in price. If we look at the last decade it is clear GDP increases until 2019 then falls, again this fall can be attributed to the pandemic.</p>
+
+  <div class="chart" id="chartP2">
+      <script>
+        var myChartP2 = "UKGDPAPI.json";
+        vegaEmbed('#chartP2', myChartP2);
+      </script>
+  </div>
+
+  <h2>Regression of GDP on happiness and life satisfaction in UK regions</h2>
+
+  <p>These visualisations plot a regression of GDP on happiness and life satisfaction using the same ONS dataset from the chart above. This data has been merged with a regional GDP Index and life satisfaction dataset from the ONS Beta website using Excel's concatenation and V-lookup function. The regression on happiness is quite weak as it has a relatively low R-squared value (0.54). Which means that just over half the variation in GDP explains the variation in happiness. The regression on life satisfaction is stronger, with an R-squared value of 0.62. Which suggests that GDP is a better predictor of life satisfaction than happiness as they are more strongly correlated.</p>
+
+  <div class="chart" id="chartP3">
+      <script>
+        var myChartP3 = "GDPvsHappiness.json";
+        vegaEmbed('#chartP3', myChartP3);
+      </script>
+  </div>
+
+  <p></p>
+
+  <div class="chart" id="chartP4">
+      <script>
+        var myChartP4 = "LifeSatisfactionvsGDP.json";
+        vegaEmbed('#chartP4', myChartP4);
+      </script>
+  </div>
+
+  <h2>Countries with the highest GDP per capita vs the happiest countries</h2>
+
+  <p>These two bar charts show the top 30 countries in the world for happiness and GDP per capita. As you can see there is some clear disparity between the rankings. Hover your mouse over the bars to see each country's data.</p>
+
+  <div class="chart" id="chartP5">
+      <script>
+        var myChartP5 = "30happiestCountries.json";
+        vegaEmbed('#chartP5', myChartP5);
+      </script>
+  </div>
+
+  <p></p>
+
+  <div class="chart" id="chartP6">
+      <script>
+        var myChartP6 = "top30GDPpc.json";
+        vegaEmbed('#chartP6', myChartP6);
+      </script>
+  </div>
+
+  <h2>Regression of Gross National Income per capita on happiness</h2>
+
+  <p>This visualisation plots a non-linear regression of GNI per capita on happiness. Using the same two Excel functions as earlier I merged the data from the World Happiness report (2020) with GNI per capita data from the World Bank. Choosing to use GNI per capita instead of GDP per capita as it is a better representation of the average income earned by a country's residents. I then cleaned the data using python in Google Colab, removing missing values before constructing fitted values for both GNI per capita and happiness. By constructing the fitted value dataframe in Colab I was able to create a quadratic regression line and add it to the scatter plot in Vega. The R-squared value of the quadratic regression (0.70) was higher than the linear regression I ran (0.61), which suggests the relationship between the two variables is better descried by a quadratic regression. This suggests that a higher GNI per capita is associated with a higher level of happiness up to a certain point. From the chart this point seems to be roughly $70,000.</p>
+
+  <div class="chart" id="chartP7">
+      <script>
+        var myChartP7 = "GNIhappinessRegression.json";
+        vegaEmbed('#chartP7', myChartP7);
+      </script>
+  </div>
+
+  <h2>Other factors that explain happiness</h2>
+
+  <p>This stacked bar chart shows different factors contributing to the happiness score for each country. The data was downloaded from the World Happiness report and then edited in Excel. Use the drop-down slider to look at countries with other levels of happiness.</p>
+
+  <div class="chart" id="chartP8">
+      <script>
+        var myChartP8 = "explainedHappiness.json";
+        vegaEmbed('#chartP8', myChartP8);
+      </script>
+  </div>
+
+  <h2>Conclusions</h2>
+
+  <p style="border:2px; border-radius: 5px; border-style:solid; border-color:#FFA500; padding: 1em;">
+    Overall, this project shows that money can buy happiness up to a certain point, the regressional analysis of GNI per capita on happiness demonstrates this and suggests that happiness increases up to an average income of roughly $70,000. While it is clear from the UK regional regression analysis that GDP alone is a poor indicator of happiness, the stronger regression on life satisfaction could suggest that after maximum happiness from GNI per capita has been achieved, life satisfaction could still increase. However more analysis would be needed to make this conclusion. Therefore, I would argue that although it makes sense for less developed countries to target greater GDP and GNI per capita to improve happiness. More developed countries should shift their focus away from GDP and GNI per capita to other factors, such as social support and health outcomes. 
+  </p>
+
+   <!--Word count: 798 -->
+</body>
+  
+</html>
