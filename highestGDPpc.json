@@ -6,7 +6,7 @@
       "text": "Top 30 countries by GDP per Capita",
       "fontSize": 16,
   
-      "subtitle": "GDP per Capita, PPP (current international $). Source: World Happiness Report 2021",
+      "subtitle": ["GDP per Capita, PPP (current international $).", "Source: World Happiness Report 2021"],
   
       "subtitleFontStyle":"italic",
   
