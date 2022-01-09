@@ -11,7 +11,7 @@
   "data":{"url": "https://raw.githubusercontent.com/1920643/1920643.github.io/main/PhysicalActivityByEducation.csv"},
   
   "height": 300,
-  "width": 300,
+  "width": "container",
 
   "mark": {
     "type": "bar",
