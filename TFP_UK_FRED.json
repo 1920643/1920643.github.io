@@ -17,7 +17,7 @@
       },
   
     "height": 300,
-    "width": 445,
+    "width": "container",
     "mark": {"type": "line", "point": false, "color": "orange"},
     "encoding": {
       "x": {
