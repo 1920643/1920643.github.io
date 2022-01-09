@@ -23,7 +23,7 @@
   "spec": {
       
       "height": 300,
-      "width": 435,
+      "width": "container",
 
       "mark": {
           "type":"line",
