@@ -14,7 +14,7 @@
         "anchor": "start",
         "color": "black"
     },
-    "width": 350,
+    "width": "container",
     "height": 300,
     "mark": {
         "type": "point",
